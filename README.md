@@ -69,9 +69,9 @@
 7. 
 
 # Project Info
-    This project was done during a build week sprint at [Lambda School](https://lambdaschool.com). Part time students stretch this week over two weeks. They have 9 class nights of 3 hours to work on the project, complete stand up meetings before every day and at the end of specified days, and one timed, multiple-choice assessment for the unit they have just completed. 
-    ## Build Sprint Mission
-    >Empower students to demonstrate unit mastery over their learning objectives.
+This project was done during a build week sprint at [Lambda School](https://lambdaschool.com). Part time students stretch this week over two weeks. They have 9 class nights of 3 hours to work on the project, complete stand up meetings before every day and at the end of specified days, and one timed, multiple-choice assessment for the unit they have just completed. 
+## Build Sprint Mission
+>Empower students to demonstrate unit mastery over their learning objectives.
 
 # Get Started With This Repo
 
