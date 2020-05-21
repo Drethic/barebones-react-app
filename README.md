@@ -3,17 +3,27 @@
 > The little cards my grandma wrote the recipes on in her beautiful cursive are getting lost or are hard to read. I need somewhere secure to keep my recipes with me at all times!
 
 
-# Proposal
+# Table Of Contents
 ---
+  - [# Proposal](#proposal)
+  - [# Target Audience](#target-audience)
+    - [# Features](#features)
+
+---
+## Proposal
+
 1. What problem does your app solve?
+    
     Anyone can go out and buy a cookbook these days, but this app is a place to store all of your secret family recipes, handed down from generation to generation.
 2. How does your app solve the problem?
+    
     It allows recipes to be stored online securely and be accessible from anywhere.
 3. What is the mission statement?
+    
     “Our mission is to provide safe and secure storage of all your recipe to be maintained and passed down from generation to generation”
 
-# Target Audience
----
+## Target Audience
+
 - Females 20+
 - Avid cooks and those who loves to cook
 - Foodies 
@@ -32,3 +42,5 @@
     - Adding images for recipes
     - Share recipes on social media
     - Add Oauth for social login (google, facebook, etc..)
+
+[**Read Full Product Vision Document***](./files/Secret%20Family%20Recipes.pdf)
