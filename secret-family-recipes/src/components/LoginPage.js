@@ -65,46 +65,47 @@ function Login() {
   }, [loginState]);
 
   return (
-    //container for login element
-    <div className='loginContainer'>
-      <form
-        className={classes.root}
-        noValidate
-        autoComplete='off'
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <div className='LoginFieldEmail'>
-          {/* email/UN text field */}
-          <TextField
-            error={errors.email}
-            id='email'
-            label='email'
-            variant='outlined'
-            helperText={errors.email}
-            ref={register({ required: true, maxLength: 10 })}
-          />
-          {errors.email}
-          <div className='LoginFieldEmail'>
-            {/* Password text field */}
-            <TextField
-              id='outlined-basic'
-              label='password'
-              variant='outlined'
-            />
-          </div>
-        </div>
-        <div className='LoginButtons'>
-          {/* Login Button */}
-          <Button variant='contained' color='primary'>
-            Login
-          </Button>
-          {/* Registration Button */}
-          <Button variant='contained' color='primary'>
-            Register
-          </Button>
-        </div>
-      </form>
-    </div>
+    <div>FIXED!</div>
+    // //container for login element
+    // <div className='loginContainer'>
+    //   <form
+    //     className={classes.root}
+    //     noValidate
+    //     autoComplete='off'
+    //     onSubmit={handleSubmit(onSubmit)}
+    //   >
+    //     <div className='LoginFieldEmail'>
+    //       {/* email/UN text field */}
+    //       <TextField
+    //         error={errors.email}
+    //         id='email'
+    //         label='email'
+    //         variant='outlined'
+    //         helperText={errors.email}
+    //         ref={register({ required: true, maxLength: 10 })}
+    //       />
+    //       {errors.email}
+    //       <div className='LoginFieldEmail'>
+    //         {/* Password text field */}
+    //         <TextField
+    //           id='outlined-basic'
+    //           label='password'
+    //           variant='outlined'
+    //         />
+    //       </div>
+    //     </div>
+    //     <div className='LoginButtons'>
+    //       {/* Login Button */}
+    //       <Button variant='contained' color='primary'>
+    //         Login
+    //       </Button>
+    //       {/* Registration Button */}
+    //       <Button variant='contained' color='primary'>
+    //         Register
+    //       </Button>
+    //     </div>
+    //   </form>
+    // </div>
   );
 }
 
