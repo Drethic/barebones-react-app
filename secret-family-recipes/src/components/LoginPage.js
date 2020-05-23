@@ -8,14 +8,14 @@ import Tab from '@material-ui/core/Tab';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: 200,
-    },
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1),
+//       width: 200,
+//     },
+//   },
+// }));
 
 //Login Validation
 const loginSchema = yup.object().shape({
@@ -37,7 +37,7 @@ const regiterSchema = yup.object().shape({
 });
 
 function Login() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     console.log(data);
@@ -65,47 +65,46 @@ function Login() {
   }, [loginState]);
 
   return (
-    <div>FIXED!</div>
-    // //container for login element
-    // <div className='loginContainer'>
-    //   <form
-    //     className={classes.root}
-    //     noValidate
-    //     autoComplete='off'
-    //     onSubmit={handleSubmit(onSubmit)}
-    //   >
-    //     <div className='LoginFieldEmail'>
-    //       {/* email/UN text field */}
-    //       <TextField
-    //         error={errors.email}
-    //         id='email'
-    //         label='email'
-    //         variant='outlined'
-    //         helperText={errors.email}
-    //         ref={register({ required: true, maxLength: 10 })}
-    //       />
-    //       {errors.email}
-    //       <div className='LoginFieldEmail'>
-    //         {/* Password text field */}
-    //         <TextField
-    //           id='outlined-basic'
-    //           label='password'
-    //           variant='outlined'
-    //         />
-    //       </div>
-    //     </div>
-    //     <div className='LoginButtons'>
-    //       {/* Login Button */}
-    //       <Button variant='contained' color='primary'>
-    //         Login
-    //       </Button>
-    //       {/* Registration Button */}
-    //       <Button variant='contained' color='primary'>
-    //         Register
-    //       </Button>
-    //     </div>
-    //   </form>
-    // </div>
+    //container for login element
+    <div className='loginContainer'>
+      <form
+        // className={classes.root}
+        noValidate
+        autoComplete='off'
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className='LoginFieldEmail'>
+          {/* email/UN text field */}
+          <TextField
+            error={errors.email}
+            id='email'
+            label='email'
+            variant='outlined'
+            helperText={errors.email}
+            ref={register({ required: true, maxLength: 10 })}
+          />
+          {errors.email}
+          <div className='LoginFieldEmail'>
+            {/* Password text field */}
+            <TextField
+              id='outlined-basic'
+              label='password'
+              variant='outlined'
+            />
+          </div>
+        </div>
+        <div className='LoginButtons'>
+          {/* Login Button */}
+          <Button variant='contained' color='primary'>
+            Login
+          </Button>
+          {/* Registration Button */}
+          <Button variant='contained' color='primary'>
+            Register
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 }
 
