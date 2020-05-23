@@ -7,7 +7,7 @@ function Header() {
     <div className='nav-bar'>
       <AppBar position='static' color='secondary'>
         <Link to='/login'>Login</Link>
-        {/* <Link to='/recipe-home'>Recipes</Link> */}
+        <Link to='/recipes-home'>All Recipes</Link>
       </AppBar>
     </div>
   );

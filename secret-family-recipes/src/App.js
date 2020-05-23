@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Login from './components/LoginPage';
 import './App.css';
 
-// import PrivateRoute from './components/PriviteRoute';
+import PrivateRoute from './components/PriviteRoute';
 import Header from './components/Header';
+import Home from './components/Home';
 function App() {
   return (
     <Router>
@@ -16,7 +17,7 @@ function App() {
           <Switch>
             <Route path='/login' component={Login} />
             <Route exact path='/' component={Login} />
-            {/* <PrivateRoute path='/recipe-home' component={} /> */}
+            <PrivateRoute path='/recipes-home' component={Home} />
           </Switch>
         </div>
       </div>

@@ -4,7 +4,8 @@ import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 function Login(props) {
   const [creds, setCreds] = useState({
-    username: '',
+    name: '',
+    email: '',
     password: '',
   });
   const handleChange = e => {
@@ -17,10 +18,10 @@ function Login(props) {
     e.preventDefault();
     console.log(creds);
     AxiosWithAuth()
-      .post('/login', creds)
+      .post('auth/login', creds)
       .then(res => {
-        localStorage.setItem('token', res.data.payload);
-        props.history.push('/friendslist');
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/recipes-home');
       })
       .catch(err => {
         console.log('Err is: ', err);
@@ -29,11 +30,18 @@ function Login(props) {
   return (
     <section className='loginForm'>
       <form onSubmit={login}>
-        <label>User Name:</label>
+        {/* <label>Name:</label>
         <input
           type='text'
           name='username'
           value={creds.username}
+          onChange={handleChange}
+        /> */}
+        <label>Email:</label>
+        <input
+          type='email'
+          name='email'
+          value={creds.email}
           onChange={handleChange}
         />
         <br />
