@@ -38,10 +38,10 @@ const regiterSchema = yup.object().shape({
 
 function Login() {
   // const classes = useStyles();
-  const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-  };
+  // const { register, handleSubmit, errors } = useForm();
+  // const onSubmit = data => {
+  //   console.log(data);
+  // };
   // your form submit function which will invoke after successful validation
   // Login default state
   const [loginState, setLoginState] = useState({
@@ -71,19 +71,19 @@ function Login() {
         // className={classes.root}
         noValidate
         autoComplete='off'
-        onSubmit={handleSubmit(onSubmit)}
+        // onSubmit={handleSubmit(onSubmit)}
       >
         {/* <div className='LoginFieldEmail'> */}
         {/* email/UN text field */}
         <TextField
-          error={errors.email}
+          // error={errors.email}
           id='email'
           label='email'
           variant='outlined'
-          helperText={errors.email}
-          ref={register({ required: true, maxLength: 10 })}
+          // helperText={errors.email}
+          // ref={register({ required: true, maxLength: 10 })}
         />
-        {errors.email}
+        {/* {errors.email} */}
         {/* <div className='LoginFieldEmail'> */}
         {/* Password text field */}
         <TextField id='outlined-basic' label='password' variant='outlined' />
