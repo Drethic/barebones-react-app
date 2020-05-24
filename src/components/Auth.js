@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core';
 import * as yup from 'yup';
 import { withRouter, useHistory } from 'react-router-dom';
-import '../css/LoginPage.css';
+import '../css/AuthPage.css';
 import NavTabs from './Navigation/Tabs/NavTabs';
 
 import AxiosWithAuth from '../utils/AxiosWithAuth';
