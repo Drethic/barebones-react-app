@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Auth from './components/Auth';
+import AuthPage from './components/AuthPage';
 import './App.css';
 
 import PrivateRoute from './components/Navigation/PrivateRoute';
@@ -15,9 +15,9 @@ function App() {
         </div>
         <div className='routes'>
           <Switch>
-            <Route path='/login' component={Auth} />
-            <Route path='/register' component={Auth} />
-            <Route exact path='/' component={Auth} />
+            <Route path='/login' component={AuthPage} />
+            <Route path='/register' component={AuthPage} />
+            <Route exact path='/' component={AuthPage} />
             <PrivateRoute path='/recipes-home' component={Home} />
           </Switch>
         </div>

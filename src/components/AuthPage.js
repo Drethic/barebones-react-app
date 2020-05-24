@@ -14,7 +14,7 @@ import { Formik } from 'formik';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 //Form Validation Schema
-function Auth(props) {
+function AuthPage(props) {
   const baseSchemaFields = {
     email: yup
       .string()
@@ -197,4 +197,4 @@ function Auth(props) {
     </section>
   );
 }
-export default withRouter(Auth);
+export default withRouter(AuthPage);
