@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { Button, TextField, FormHelperText } from '@material-ui/core';
 import * as yup from 'yup';
+import './css/LoginPage.css';
 
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
@@ -72,7 +73,7 @@ function Login(props) {
       });
   };
   return (
-    <section className='loginForm'>
+    <section className='loginContainer'>
       <form onSubmit={login}>
         {/* <label>Name:</label>
         <input
@@ -107,10 +108,11 @@ function Login(props) {
             onChange={handleChange}
           />
           {errorState.password.length > 0 ? <FormHelperText>{errorState.password}</FormHelperText> : null}
-        </div>
+        <br />
         <Button type='submit' variant='contained' color='primary' data-cy='submit'>
           Log In
         </Button>
+        </div>
       </form>
     </section>
   );
