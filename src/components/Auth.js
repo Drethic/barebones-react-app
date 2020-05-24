@@ -9,6 +9,7 @@ import * as yup from 'yup';
 import { withRouter, useHistory } from 'react-router-dom';
 import '../css/AuthPage.css';
 import NavTabs from './Navigation/Tabs/NavTabs';
+import { Formik } from 'formik';
 
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
@@ -79,9 +80,8 @@ function Auth(props) {
     });
   };
 
-  const login = (e) => {
-    e.preventDefault();
-    console.log(creds);
+  const login = (event) => {
+    event.preventDefault();
     AxiosWithAuth()
       .post('auth/login', creds)
       .then((res) => {
@@ -95,7 +95,6 @@ function Auth(props) {
 
   const register = (e) => {
     e.preventDefault();
-    console.log(creds);
     AxiosWithAuth()
       .post('auth/register', creds)
       .then((res) => {
@@ -158,21 +157,33 @@ function Auth(props) {
   );
 
   const loginForm = (
-    <form onSubmit={login}>
-      <div className='authInput'>
-      {baseFields}
-      {submitButton('Log in', 'login')}
-      </div>
-    </form>
+    <Formik
+      initialValues={creds}
+      onSubmit={login}
+      validationSchema={loginSchema}
+    >
+      <form onSubmit={login}>
+        <div className='authInput'>
+        {baseFields}
+        {submitButton('Log in', 'login')}
+        </div>
+      </form>
+    </Formik>
   );
 
   const registerForm = (
-    <form onSubmit={register}>
-      <div className='authInput'>
-        {registerFields}
-        {submitButton('Register', 'register')}
-      </div>
-    </form>
+    <Formik
+      initialValues={creds}
+      onSubmit={register}
+      validationSchema={registerSchema}
+    >
+      <form onSubmit={register}>
+        <div className='authInput'>
+          {registerFields}
+          {submitButton('Register', 'register')}
+        </div>
+      </form>
+    </Formik>
   );
 
   return (
