@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Auth from './components/Auth';
 import './App.css';
 
@@ -8,7 +8,7 @@ import PrivateRoute from './components/Navigation/PrivateRoute';
 import Home from './components/Home';
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className='App'>
         <div className='nav-container'>
           {/* <Header /> */}
@@ -22,7 +22,7 @@ function App() {
           </Switch>
         </div>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
