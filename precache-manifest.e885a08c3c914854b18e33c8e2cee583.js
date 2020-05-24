@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4abda26d1d8cc19ccb80df66cfd0e0ac",
+    "revision": "2be424372d1fe0ce2f31f3544abf0348",
     "url": "/barebones-react-app/index.html"
   },
   {
-    "revision": "69acc1d1741d9db089d4",
+    "revision": "c63d1e16043e3fd12d5a",
     "url": "/barebones-react-app/static/css/main.b3492f43.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/barebones-react-app/static/js/2.67ede13e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "69acc1d1741d9db089d4",
-    "url": "/barebones-react-app/static/js/main.a547c385.chunk.js"
+    "revision": "c63d1e16043e3fd12d5a",
+    "url": "/barebones-react-app/static/js/main.928fcf79.chunk.js"
   },
   {
     "revision": "253a15f14e6da224188b",

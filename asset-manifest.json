@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/barebones-react-app/static/css/main.b3492f43.chunk.css",
-    "main.js": "/barebones-react-app/static/js/main.a547c385.chunk.js",
-    "main.js.map": "/barebones-react-app/static/js/main.a547c385.chunk.js.map",
+    "main.js": "/barebones-react-app/static/js/main.928fcf79.chunk.js",
+    "main.js.map": "/barebones-react-app/static/js/main.928fcf79.chunk.js.map",
     "runtime-main.js": "/barebones-react-app/static/js/runtime-main.644cbfcc.js",
     "runtime-main.js.map": "/barebones-react-app/static/js/runtime-main.644cbfcc.js.map",
     "static/js/2.67ede13e.chunk.js": "/barebones-react-app/static/js/2.67ede13e.chunk.js",
     "static/js/2.67ede13e.chunk.js.map": "/barebones-react-app/static/js/2.67ede13e.chunk.js.map",
     "index.html": "/barebones-react-app/index.html",
-    "precache-manifest.674d69f35b6575fd3877345f29000e4c.js": "/barebones-react-app/precache-manifest.674d69f35b6575fd3877345f29000e4c.js",
+    "precache-manifest.e885a08c3c914854b18e33c8e2cee583.js": "/barebones-react-app/precache-manifest.e885a08c3c914854b18e33c8e2cee583.js",
     "service-worker.js": "/barebones-react-app/service-worker.js",
     "static/css/main.b3492f43.chunk.css.map": "/barebones-react-app/static/css/main.b3492f43.chunk.css.map",
     "static/js/2.67ede13e.chunk.js.LICENSE.txt": "/barebones-react-app/static/js/2.67ede13e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.644cbfcc.js",
     "static/js/2.67ede13e.chunk.js",
     "static/css/main.b3492f43.chunk.css",
-    "static/js/main.a547c385.chunk.js"
+    "static/js/main.928fcf79.chunk.js"
   ]
 }
