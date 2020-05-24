@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.b3492f43.chunk.css",
-    "main.js": "/static/js/main.ca85e057.chunk.js",
-    "main.js.map": "/static/js/main.ca85e057.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ff0f21ca.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ff0f21ca.js.map",
-    "static/js/2.67ede13e.chunk.js": "/static/js/2.67ede13e.chunk.js",
-    "static/js/2.67ede13e.chunk.js.map": "/static/js/2.67ede13e.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.f8ec4a3a987fbe73c0585a0f0f36c69a.js": "/precache-manifest.f8ec4a3a987fbe73c0585a0f0f36c69a.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.b3492f43.chunk.css.map": "/static/css/main.b3492f43.chunk.css.map",
-    "static/js/2.67ede13e.chunk.js.LICENSE.txt": "/static/js/2.67ede13e.chunk.js.LICENSE.txt"
+    "main.css": "/barebones-react-app/static/css/main.b3492f43.chunk.css",
+    "main.js": "/barebones-react-app/static/js/main.a547c385.chunk.js",
+    "main.js.map": "/barebones-react-app/static/js/main.a547c385.chunk.js.map",
+    "runtime-main.js": "/barebones-react-app/static/js/runtime-main.644cbfcc.js",
+    "runtime-main.js.map": "/barebones-react-app/static/js/runtime-main.644cbfcc.js.map",
+    "static/js/2.67ede13e.chunk.js": "/barebones-react-app/static/js/2.67ede13e.chunk.js",
+    "static/js/2.67ede13e.chunk.js.map": "/barebones-react-app/static/js/2.67ede13e.chunk.js.map",
+    "index.html": "/barebones-react-app/index.html",
+    "precache-manifest.674d69f35b6575fd3877345f29000e4c.js": "/barebones-react-app/precache-manifest.674d69f35b6575fd3877345f29000e4c.js",
+    "service-worker.js": "/barebones-react-app/service-worker.js",
+    "static/css/main.b3492f43.chunk.css.map": "/barebones-react-app/static/css/main.b3492f43.chunk.css.map",
+    "static/js/2.67ede13e.chunk.js.LICENSE.txt": "/barebones-react-app/static/js/2.67ede13e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ff0f21ca.js",
+    "static/js/runtime-main.644cbfcc.js",
     "static/js/2.67ede13e.chunk.js",
     "static/css/main.b3492f43.chunk.css",
-    "static/js/main.ca85e057.chunk.js"
+    "static/js/main.a547c385.chunk.js"
   ]
 }
