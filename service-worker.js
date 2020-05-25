@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/barebones-react-app/precache-manifest.3c45eda768d7ef7b2a296b768ec7d5f3.js"
+  "/barebones-react-app/precache-manifest.50f1fe577fd6f38777e2487010e50d6b.js"
 );
 
 self.addEventListener('message', (event) => {
