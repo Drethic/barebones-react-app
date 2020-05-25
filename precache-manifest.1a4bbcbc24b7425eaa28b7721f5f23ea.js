@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "36abd4f84a1d5016424218aa4ef0946d",
+    "revision": "8aa5eee083e65f90a6e65f93a5703c8f",
     "url": "/barebones-react-app/index.html"
   },
   {
-    "revision": "506e4363de83a67ddc22",
+    "revision": "b931428d46fcff8020f3",
     "url": "/barebones-react-app/static/css/main.b3492f43.chunk.css"
   },
   {
-    "revision": "bcef114a2ad44e8a1fde",
-    "url": "/barebones-react-app/static/js/2.7e3dc3c9.chunk.js"
+    "revision": "ed13b6ef16892ad5c475",
+    "url": "/barebones-react-app/static/js/2.67ede13e.chunk.js"
   },
   {
     "revision": "e2896a34bc173bbd7b6d83453e91d5e1",
-    "url": "/barebones-react-app/static/js/2.7e3dc3c9.chunk.js.LICENSE.txt"
+    "url": "/barebones-react-app/static/js/2.67ede13e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "506e4363de83a67ddc22",
-    "url": "/barebones-react-app/static/js/main.efe59704.chunk.js"
+    "revision": "b931428d46fcff8020f3",
+    "url": "/barebones-react-app/static/js/main.b664c666.chunk.js"
   },
   {
     "revision": "253a15f14e6da224188b",
