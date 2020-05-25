@@ -15,10 +15,10 @@ function App() {
         </div>
         <div className='routes'>
           <Switch>
-            <Route path='/login' component={AuthPage} />
-            <Route path='/register' component={AuthPage} />
-            <Route exact path='/' component={AuthPage} />
-            <PrivateRoute path='/recipes-home' component={Home} />
+            <Route path={`${process.env.PUBLIC_URL}/login`} component={AuthPage} />
+            <Route path={`${process.env.PUBLIC_URL}/register`} component={AuthPage} />
+            <Route exact path={`${process.env.PUBLIC_URL}/`} component={AuthPage} />
+            <PrivateRoute path={`${process.env.PUBLIC_URL}/recipes-home`} component={Home} />
           </Switch>
         </div>
       </div>

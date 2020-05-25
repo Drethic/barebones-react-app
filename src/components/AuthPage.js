@@ -33,7 +33,6 @@ function AuthPage(props) {
   });
 
   let history = useHistory();
-  console.log(history.location);
   let currentRoute = history.location.pathname.split('/')[1];
   let currentSchema = loginSchema;
   if (currentRoute === 'register') {
