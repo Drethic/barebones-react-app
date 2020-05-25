@@ -6,14 +6,15 @@ import './App.css';
 import PrivateRoute from './components/Navigation/PrivateRoute';
 // import Header from './components/Header';
 import Home from './components/Home';
+
 function App() {
   return (
     <BrowserRouter>
-      <div className='App'>
-        <div className='nav-container'>
+      <div className="App">
+        <div className="nav-container">
           {/* <Header /> */}
         </div>
-        <div className='routes'>
+        <div className="routes">
           <Switch>
             <Route path={`${process.env.PUBLIC_URL}/login`} component={AuthPage} />
             <Route path={`${process.env.PUBLIC_URL}/register`} component={AuthPage} />
