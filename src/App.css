@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+/* Styles for Header.js */
+
+.nav-bar {
+  height: 10vh;
+  display: flex;
+  background-color: #ffc857;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  width: 25%;
+  color: white;
+}
+.public-nav {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.private-nav {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

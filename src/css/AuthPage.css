@@ -1,11 +1,11 @@
 .authInput {
   display: flex;
-  align-content:center;
+  align-content: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 2%;
-  margin-bottom:1%;
+  margin-bottom: 1%;
 }
 
 .authInput .MuiFormControl-root {
@@ -15,4 +15,21 @@
 .authInput p.MuiFormHelperText-root {
   color: red;
   margin-bottom: 10px;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginTabs {
+  align-items: center;
+  justify-content: center;
+}
+
+.loginTabs .MuiTab-root {
+  background-color: #ffc857;
+  color: black;
 }

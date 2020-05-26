@@ -5,10 +5,14 @@ import { Formik } from 'formik';
 import AuthForm from './Form';
 import '../../css/AuthPage.css';
 import NavTabs from '../Navigation/Tabs/NavTabs';
-// import AxiosWithAuth from '../../utils/AxiosWithAuth';
+import AxiosWithAuth from '../../utils/AxiosWithAuth';
 
-// function AuthPage(props) {
-function AuthPage() {
+function AuthPage(props) {
+  const {
+    history,
+    setAuth,
+    setUser,
+  } = props;
   const baseSchemaFields = {
     email: yup
       .string()
@@ -27,16 +31,16 @@ function AuthPage() {
   });
 
   const auth = (values, action) => {
-    console.log({ values, action });
-    // AxiosWithAuth()
-    //   .post(`auth/${action}`, creds)
-    //   .then((res) => {
-    //     localStorage.setItem('token', res.data.token);
-    //     props.history.push('/recipes-home');
-    //   })
-    //   .catch((err) => {
-    //     console.log('Err is: ', err);
-    //   });
+    AxiosWithAuth()
+      .post(`auth/${action}`, values)
+      .then((res) => {
+        setAuth(res.data.token);
+        setUser(atob(res.data.token.split('.')[1]));
+        history.push(`${process.env.PUBLIC_URL}/recipes-home`);
+      })
+      .catch((err) => {
+        console.log('Err is: ', err);
+      });
   };
 
   const baseFields = {
@@ -54,7 +58,6 @@ function AuthPage() {
       initialValues={baseFields}
       validationSchema={loginSchema}
       onSubmit={(values) => auth(values, 'login')}
-      // onSubmit={login}
     >
       {(loginProps) => (
         <AuthForm
@@ -72,7 +75,6 @@ function AuthPage() {
       initialValues={{ name: '', ...baseFields }}
       validationSchema={registerSchema}
       onSubmit={(values) => auth(values, 'register')}
-      // onSubmit={register}
     >
       {(regProps) => (
         <AuthForm
@@ -87,22 +89,24 @@ function AuthPage() {
 
   return (
     <section className="loginContainer">
-      <NavTabs
-        tabs={[
-          {
-            label: 'Login',
-            link: '/login',
-            panel: loginForm,
-            tabOrder: 0,
-          },
-          {
-            label: 'Register',
-            link: '/register',
-            panel: registerForm,
-            tabOrder: 1,
-          },
-        ]}
-      />
+      <div className="loginTabs">
+        <NavTabs
+          tabs={[
+            {
+              label: 'Login',
+              link: '/login',
+              panel: loginForm,
+              tabOrder: 0,
+            },
+            {
+              label: 'Register',
+              link: '/register',
+              panel: registerForm,
+              tabOrder: 1,
+            },
+          ]}
+        />
+      </div>
     </section>
   );
 }
