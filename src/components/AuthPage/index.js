@@ -6,6 +6,7 @@ import AuthForm from './Form';
 import '../../css/AuthPage.css';
 import NavTabs from '../Navigation/Tabs/NavTabs';
 import AxiosWithAuth from '../../utils/AxiosWithAuth';
+import getUserFromToken from '../../utils';
 
 function AuthPage(props) {
   const {
@@ -35,7 +36,7 @@ function AuthPage(props) {
       .post(`auth/${action}`, values)
       .then((res) => {
         setAuth(res.data.token);
-        setUser(atob(res.data.token.split('.')[1]));
+        setUser(getUserFromToken(res.data.token));
         history.push(`${process.env.PUBLIC_URL}/recipes-home`);
       })
       .catch((err) => {

@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useFormik } from 'formik';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import CardContent from './Cards/Cards';
 
-function Home() {
-  // const getUsers = (e) => {
-  //   e.preventDefault();
-  //   AxiosWithAuth()
-  //     .get('/users')
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log('User Get Err:', err));
-  // };
-
+function Home(props) {
+  const {
+    user,
+  } = props;
   const mockRecipes = [
     {
       recipe_id: 1,
@@ -39,20 +36,71 @@ function Home() {
       image_link: null,
     },
   ];
-
-  console.log({ mockRecipes });
-
-  const getRecipes = (e) => {
-    e.preventDefault();
+  const [userRecipes, setUserRecipes] = useState(mockRecipes);
+  const getUserRecipes = () => {
     AxiosWithAuth()
-      .get('/users/1/recipes')
-      .then((res) => console.log(res))
+      .get(`/users/${user.id}/recipes`)
+      .then((res) => {
+        console.log({ response: res.data });
+        setUserRecipes(res.data);
+      })
       .catch((err) => console.log('User Get Err:', err));
   };
+  const [allRecipes, setAllRecipes] = useState([]);
+  const getAllRecipes = () => {
+    AxiosWithAuth()
+      .get('/recipes')
+      .then((res) => {
+        console.log({ response: res.data });
+        setAllRecipes(res.data);
+      })
+      .catch((err) => console.log('User Get Err:', err));
+  };
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  useEffect(() => {
+    const results = allRecipes.filter((recipe) => (
+      recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+      || recipe.category_name.toLowerCase().includes(searchTerm.toLowerCase())
+    ));
+    setSearchResults(results);
+  }, [allRecipes, searchTerm]);
+
+  const formik = useFormik({
+    initialValues: {
+      searchbar: '',
+    },
+    onSubmit: (values) => {
+      console.log({ values });
+      getAllRecipes();
+      setSearchTerm(values.searchbar);
+    },
+  });
+
   return (
-    <div>
-      <button type="submit" onClick={getRecipes}>Click me</button>
-    </div>
+    <>
+      <form onSubmit={formik.handleSubmit}>
+        <label htmlFor="searchbar">
+          <input
+            id="searchbar"
+            name="searchbar"
+            type="text"
+            onChange={formik.handleChange}
+            value={formik.values.searchbar}
+          />
+        </label>
+        <button type="submit">Search</button>
+      </form>
+      <ul>
+        {searchResults.map((item) => (
+          <li key={item.recipe_id}>{item.title}</li>
+        ))}
+      </ul>
+      <div>
+        <CardContent recipes={userRecipes} />
+        <button type="button" onClick={getUserRecipes}>Get current user recipes</button>
+      </div>
+    </>
   );
 }
 export default Home;
