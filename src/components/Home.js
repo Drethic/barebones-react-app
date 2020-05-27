@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useFormik } from 'formik';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import CardContent from './Cards/Cards';
@@ -36,46 +36,46 @@ function Home(props) {
       image_link: null,
     },
   ];
-  const [userRecipes, setUserRecipes] = useState(mockRecipes);
+  const [userRecipes, setUserRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const getUserRecipes = () => {
     AxiosWithAuth()
       .get(`/users/${user.id}/recipes`)
       .then((res) => {
-        console.log({ response: res.data });
-        setUserRecipes(res.data);
+        console.log({ userRecipes: res.data });
+        // setUserRecipes(res.data);
+        setUserRecipes(mockRecipes);
+        // setRecipes(res.data);
+        setRecipes(mockRecipes);
       })
       .catch((err) => console.log('User Get Err:', err));
   };
-  const [allRecipes, setAllRecipes] = useState([]);
-  const getAllRecipes = () => {
-    AxiosWithAuth()
-      .get('/recipes')
-      .then((res) => {
-        console.log({ response: res.data });
-        setAllRecipes(res.data);
-      })
-      .catch((err) => console.log('User Get Err:', err));
-  };
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  useEffect(() => {
-    const results = allRecipes.filter((recipe) => (
-      recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
-      || recipe.category_name.toLowerCase().includes(searchTerm.toLowerCase())
-    ));
-    setSearchResults(results);
-  }, [allRecipes, searchTerm]);
 
   const formik = useFormik({
     initialValues: {
       searchbar: '',
     },
-    onSubmit: (values) => {
-      console.log({ values });
-      getAllRecipes();
-      setSearchTerm(values.searchbar);
+    onSubmit: (values, { resetForm }) => {
+      const searchTerm = values.searchbar;
+      const results = userRecipes.filter((recipe) => (
+        recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+        || recipe.category_name.toLowerCase().includes(searchTerm.toLowerCase())
+      ));
+      setRecipes(results);
+      resetForm();
     },
   });
+
+  const clearSearch = () => setRecipes(userRecipes);
+
+  // Get User Recipes on load
+  const savedGetUserRecipes = useRef();
+  useEffect(() => {
+    savedGetUserRecipes.current = getUserRecipes;
+  });
+  useEffect(() => {
+    savedGetUserRecipes.current();
+  }, []);
 
   return (
     <>
@@ -90,17 +90,13 @@ function Home(props) {
           />
         </label>
         <button type="submit">Search</button>
+        <button type="button" onClick={clearSearch}>Clear</button>
       </form>
-      <ul>
-        {searchResults.map((item) => (
-          <li key={item.recipe_id}>{item.title}</li>
-        ))}
-      </ul>
       <div>
-        <CardContent recipes={userRecipes} />
-        <button type="button" onClick={getUserRecipes}>Get current user recipes</button>
+        <CardContent recipes={recipes} />
       </div>
     </>
   );
 }
+
 export default Home;
