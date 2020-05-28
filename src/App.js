@@ -11,6 +11,7 @@ import Home from './components/Home';
 
 function App() {
   const cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  // const token = localStorage.getItem('token');
   const [isAuth, setAuth] = useState(cookieValue !== '' ? cookieValue : null);
   const [user, setUser] = useState(getUserFromToken(cookieValue));
 
