@@ -1,0 +1,38 @@
+.cardContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-around;
+}
+
+.ingredientContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	text-align: start;
+	align-content: center;
+	justify-content: center;
+	justify-content: space-between;
+}
+.instructionsContainer {
+	display: flex;
+	text-align: start;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+.instruction {
+	display: flex;
+	text-align: start;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+.subHeaders {
+	text-align: center;
+}

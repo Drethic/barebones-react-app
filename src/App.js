@@ -8,12 +8,13 @@ import getUserFromToken from './utils';
 
 import PrivateRoute from './components/Navigation/PrivateRoute';
 import Home from './components/Home';
+import AddRecipeStepper from './components/Recipes/AddRecipe';
 
 function App() {
-  const cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
-  // const token = localStorage.getItem('token');
-  const [isAuth, setAuth] = useState(cookieValue !== '' ? cookieValue : null);
-  const [user, setUser] = useState(getUserFromToken(cookieValue));
+  // const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  const token = localStorage.getItem('token');
+  const [isAuth, setAuth] = useState(token !== '' ? token : null);
+  const [user, setUser] = useState(getUserFromToken(token));
 
   return (
     <BrowserRouter>
@@ -24,10 +25,11 @@ function App() {
         </div>
         <div className="routes">
           <Switch>
-            <Route path={`${process.env.PUBLIC_URL}/login`} component={() => <AuthPage setAuth={setAuth} setUser={setUser} />} />
-            <Route path={`${process.env.PUBLIC_URL}/register`} component={() => <AuthPage setAuth={setAuth} setUser={setUser} />} />
-            <Route exact path={`${process.env.PUBLIC_URL}/`} component={() => <AuthPage setAuth={setAuth} setUser={setUser} />} />
+            <Route path={`${process.env.PUBLIC_URL}/login`} component={() => <AuthPage setAuth={setAuth} setUser={setUser} isAuth={isAuth} />} />
+            <Route path={`${process.env.PUBLIC_URL}/register`} component={() => <AuthPage setAuth={setAuth} setUser={setUser} isAuth={isAuth} />} />
+            <Route exact path={`${process.env.PUBLIC_URL}/`} component={() => <AuthPage setAuth={setAuth} setUser={setUser} isAuth={isAuth} />} />
             <PrivateRoute path={`${process.env.PUBLIC_URL}/recipes-home`} component={() => <Home user={user} />} isAuth={isAuth} />
+            <PrivateRoute exact path={`${process.env.PUBLIC_URL}/add-recipe`} component={() => <AddRecipeStepper user={user} />} isAuth={isAuth} />
           </Switch>
         </div>
       </div>

@@ -1,35 +1,35 @@
 .authInput {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 2%;
-  margin-bottom: 1%;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 2%;
+	margin-bottom: 1%;
 }
 
 .authInput .MuiFormControl-root {
-  margin: 10px 0;
+	margin: 10px 0;
 }
 
 .authInput p.MuiFormHelperText-root {
-  color: red;
-  margin-bottom: 10px;
+	color: red;
+	margin-bottom: 10px;
 }
 
 .loginContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .loginTabs {
-  align-items: center;
-  justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
 .loginTabs .MuiTab-root {
-  background-color: #ffc857;
-  color: black;
+	background-color: #ffc857;
+	color: black;
 }

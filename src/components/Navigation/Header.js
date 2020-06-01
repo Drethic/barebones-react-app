@@ -18,6 +18,7 @@ function Header(props) {
       .then(() => {
         setAuth(null);
         setUser({});
+        localStorage.removeItem('token');
         window.location.reload(false);
         history.push(`${publicUrl}`);
       })
@@ -26,15 +27,18 @@ function Header(props) {
       });
   };
 
+  const goToPage = (page) => history.push(`${publicUrl}/${page}`);
+
   return (
     <div className="nav-bar">
       {isAuth ? (
         <section className="private-nav">
           <h2>Welcome to Secret Family Recipes</h2>
-          <section className="links">
-            <a href={`${publicUrl}/recipes-home`}>All Recipes</a>
+          <div className="links">
+            <button type="button" onClick={() => goToPage('recipes-home')}>All Recipes</button>
+            <button type="button" onClick={() => goToPage('add-recipe')}>Add a recipe</button>
             <button type="submit" onClick={logout}>Log Out</button>
-          </section>
+          </div>
         </section>
       ) : (
         <section className="public-nav">

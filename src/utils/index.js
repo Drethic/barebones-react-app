@@ -1,4 +1,7 @@
 const getUserFromToken = (token) => {
+  if (!token) {
+    return null;
+  }
   const tokenParts = token.split('.');
   if (tokenParts.length < 2) {
     return null;

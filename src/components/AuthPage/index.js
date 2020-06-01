@@ -13,7 +13,12 @@ function AuthPage(props) {
     history,
     setAuth,
     setUser,
+    isAuth,
   } = props;
+  if (isAuth !== null) {
+    setUser(getUserFromToken(isAuth));
+    history.push(`${process.env.PUBLIC_URL}/recipes-home`);
+  }
   const baseSchemaFields = {
     email: yup
       .string()
@@ -37,6 +42,7 @@ function AuthPage(props) {
       .then((res) => {
         setAuth(res.data.token);
         setUser(getUserFromToken(res.data.token));
+        localStorage.setItem('token', res.data.token);
         history.push(`${process.env.PUBLIC_URL}/recipes-home`);
       })
       .catch((err) => {
